@@ -14,6 +14,16 @@ function App() {
     { id: 6, name: 'Coca', category: 'Bebidas', price: 4.99 },
     { id: 7, name: 'Fanta', category: 'Bebidas', price: 4.99 },
   ]);
+  const returnProducts = [
+    { id: 1, name: 'Hamburguer', category: 'Sanduíches', price: 7.99 },
+    { id: 2, name: 'X-Burguer', category: 'Sanduíches', price: 8.99 },
+    { id: 3, name: 'X-Salada', category: 'Sanduíches', price: 10.99 },
+    { id: 4, name: 'Big Kenzie', category: 'Sanduíches', price: 16.99 },
+    { id: 5, name: 'Guaraná', category: 'Bebidas', price: 4.99 },
+    { id: 6, name: 'Coca', category: 'Bebidas', price: 4.99 },
+    { id: 7, name: 'Fanta', category: 'Bebidas', price: 4.99 },
+  ]
+  console.log(returnProducts)
   const [searchProduct, setSearchProducts]=useState("")
   const [currentSale, setCurrentSale]=useState([])
 
@@ -49,6 +59,7 @@ function App() {
         <div>
           <input type="text" value={searchProduct} onChange={(e)=>setSearchProducts(e.target.value)}></input>
           <button onClick={()=>showProducts(searchProduct)}>Procurar</button>
+          <button onClick={()=>setPoducts(returnProducts)}>Limpar</button>
         </div>
         <div className="container_produtos">
           <MenuContainer products={products} handleClick={handleClick}/>
